@@ -174,8 +174,7 @@ section .wrapper button img {
 .titles h2 {
     font-size: 5rem;
     color: white;
-    letter-spacing: -0.03em; 
-    
+    letter-spacing: -0.03em;  
 }
 .titles h2:last-child {
     color: black;
@@ -185,21 +184,37 @@ section .wrapper button img {
 section #cups {
     width: 100%;
 }
-section .wrapper .cups::after {
+
+section .blur::before {
     content: "";
     position: absolute;
     margin: auto;
-    top: 68rem;
     right: 0;
     left: 0;
-    width: 20rem ;
-    height:32rem;
+    width: 45%;
+    height: 40%;
     background-color: var(--border-color);
-    filter: blur(13rem);
+    filter: blur(10rem);
     z-index: -1;
 }
 
 
 
-
+/* ---------------- MEDIA ----------------  */
+/* @media(max-width: 425px) {
+    section h1{
+        font-size: 2.5rem;
+    }
+    .titles h2 {
+        font-size: 3.9rem; 
+    }
+}
+@media(min-width: 600px) {
+    section .wrapper .blur::after {
+        margin-top: 10rem;
+        width: 45%;
+        height: 45%;
+        filter: blur(16rem);
+    }
+} */
 
