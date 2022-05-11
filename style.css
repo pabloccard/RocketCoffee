@@ -184,17 +184,22 @@ section .wrapper button img {
 section #cups {
     width: 100%;
 }
+.blur-limit {
+    position: relative;
+}
 
 section .blur::before {
     content: "";
     position: absolute;
     margin: auto;
-    right: 0;
+    top: 0;
     left: 0;
-    width: 45%;
-    height: 40%;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 50%;
     background-color: var(--border-color);
-    filter: blur(10rem);
+    filter: blur(6rem);
     z-index: -1;
 }
 
