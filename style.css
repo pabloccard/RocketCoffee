@@ -8,9 +8,10 @@
 :root {
     font-size: 62.5%;
     --nav-height: 9.55rem;
+    --primary-color: hsla(258, 74%, 62%, 1);
     --line-color:hsla(240, 6%, 17%, 1);
-    --border-color: hsla(258, 74%, 62%, 1);
-    --dark-text: hsla(240, 9%, 89%, 1);
+    
+    --dark-text: rgb(178, 178, 180);
     --blur-color: hsla(258, 100%, 71%, 1);
     --gradient-color: hsla(258, 74%, 71%, 0.2);
 
@@ -161,7 +162,7 @@ section .wrapper button {
     align-items: center;
     margin-top: 8.8rem;
     padding: 10px 30px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--primary-color);
     border-radius: 0.6rem;
     text-transform: uppercase;
     color: white;
@@ -182,7 +183,7 @@ section .wrapper button img {
 .titles h2:last-child {
     color: black;
     
-    text-shadow: -1px -1px 0 var(--border-color), 1px -1px 0 var(--border-color), -1px 1px 0 var(--border-color), 1px 1px 0 var(--border-color); 
+    text-shadow: -1px -1px 0 var(--primary-color), 1px -1px 0 var(--primary-color), -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color); 
 }
 section #cups {
     width: 100%;
@@ -206,7 +207,7 @@ section .blur::before {
     bottom: 0;
     width: 50%;
     height: 50%;
-    background-color: var(--border-color);
+    background-color: var(--primary-color);
     filter: blur(6rem);
     z-index: -1;
 }
@@ -215,28 +216,54 @@ section .blur::before {
 
 /* ---------------- ABOUT----------------  */
 
-#about {
+#benefits {
     text-align: left;
     padding-top: 15rem;
-  
-  background-image: linear-gradient( to top , var(--gradient-color) 1rem, black );
+    /* background-image: linear-gradient( to top , var(--gradient-color) 1rem, black ); */
+}
+#benefits header {
+    width: 100%;
+}
+#benefits .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+#benefits .card {
+    position: relative;
+    width: 100%;
+    height: 20.7rem;
+    padding: 2.4rem;
+    border: solid 1px var(--primary-color);
+    border-radius: 0.6rem;
 }
 
-#about h4 {
+#benefits h4 {
     font-size: 1.4rem;
     margin-bottom: 1.6rem;
     text-transform: uppercase;
-    color: var(--border-color);
+    color: var(--primary-color);
 }
-#about h2 {
-    margin-bottom: 2.4rem;
+#benefits h2 {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    color: white;
+}
+#benefits .card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    background-color: black;
+    position: absolute;
+    top: -1.6rem;
+}
+#benefits .card h3 {
+    color: white;
+    font-size: 2.4rem;
+    margin-bottom: 1.6rem;
+}
+#benefits p {
     color: var(--dark-text);
-}
-#about p {
-    color: var(--dark-text);
     margin-bottom: 2.4rem;
 }
-#about img {
-   width: 100%;
-}
+
 
