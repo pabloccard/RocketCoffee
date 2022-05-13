@@ -218,7 +218,7 @@ section .blur::before {
 
 
 
-/* ---------------- ABOUT----------------  */
+/* ----------------    BENEFITS----------------  */
 
 #benefits {
     text-align: left;
@@ -231,11 +231,12 @@ section .blur::before {
     gap: 3.2rem;
 }
 #benefits .card {
+    box-shadow: -.5rem .5rem 1rem var(--primary-color);
     position: relative;
     width: 100%;
-    
+    background-color: rgb(26, 17, 46);
     padding: 2.4rem;
-    border: solid 1px var(--primary-color);
+    /* border: solid 1px var(--primary-color); */
     border-radius: 0.6rem;
 }
 
@@ -253,7 +254,6 @@ section .blur::before {
 #benefits .card i {
     font-size: 3rem;
     color: var(--primary-color);
-    background-color: black;
     position: absolute;
     top: -1.6rem;
 }
