@@ -5,71 +5,108 @@
     border: 0;
     box-sizing: border-box;
 }
+
 :root {
     font-size: 62.5%;
     --nav-height: 9.55rem;
     --primary-color: hsla(258, 74%, 62%, 1);
-    --line-color:hsla(240, 6%, 17%, 1);
-    
-    --dark-text: rgb(178, 178, 180);
-    --blur-color: hsla(258, 100%, 71%, 1);
+    --line-color: hsla(240, 6%, 17%, 1);
+
+    --dark-text: #a8a8b3;
+    --blur-color: hsla(258, 100%, 71%, 0.7);
     --gradient-color: hsla(258, 74%, 71%, 0.2);
 
 }
+html {
+    
+    scroll-behavior: smooth;
+  }
+
 html,
 body {
     width: 100%;
     height: 100%;
 }
+
 body {
     font-family: 'Manrope', sans-serif;
     font-size: 1.6rem;
     text-align: center;
-    background-color:#000000;
-    overflow: overlay;
+    background-color: #000000;
+    /* overflow: overlay; */
 }
+
 header {
     width: 100%;
 }
+
 .wrapper {
     width: min(76.8rem, 100%);
     margin-inline: auto;
     padding-inline: 2.4rem;
 }
+
 ul {
     list-style: none;
 }
+
 a {
     padding: 0;
     margin: 0;
     text-decoration: none;
 }
+.button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: .6rem;
+    padding: 10px 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.6rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+section {
+    padding-block: 10rem;
+}
+
 
 
 
 /* ---------------- NAVIGATION ----------------  */
 nav {
-    background-color: #000000;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 100;
 
 }
+
 nav .wrapper {
     height: 9.55rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
-nav button{
+
+nav .logo-desktop,
+nav .wrapper .button,
+nav .wrapper button:nth-child(4) {
+    display: none;
+}
+
+nav button {
     background: none;
     cursor: pointer;
 }
+
 nav .menu {
     z-index: -2;
     transform: translateY(-100%);
 }
+
 nav .menu,
 nav .close-menu {
     position: fixed;
@@ -79,7 +116,7 @@ nav .close-menu {
 
 
 /* ---------------- MENU-EXPANDED ----------------  */
-nav::after{
+nav::after {
     content: '';
     position: absolute;
     left: 0;
@@ -90,16 +127,20 @@ nav::after{
     border-bottom: .1rem solid var(--line-color);
     z-index: -1;
 }
+
 body.menu-expanded {
     overflow: hidden;
 }
+
 body.menu-expanded .close-menu {
     position: static;
 }
 
-.menu, /*menu e close-menu: hidden*/
+.menu,
+/*menu e close-menu: hidden*/
 .close-menu,
-body.menu-expanded .open-menu { /*open-menu quando body receber a classe, fica: hidden*/
+body.menu-expanded .open-menu {
+    /*open-menu quando body receber a classe, fica: hidden*/
     opacity: 0;
     visibility: hidden;
 }
@@ -107,19 +148,23 @@ body.menu-expanded .open-menu { /*open-menu quando body receber a classe, fica: 
 body.menu-expanded > :not(nav) {
     visibility: hidden;
 }
+
 body.menu-expanded .menu,
 body.menu-expanded .close-menu {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
-body.menu-expanded .menu{
+
+body.menu-expanded .menu {
     left: 0;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #000000;
     top: var(--nav-height);
     transition: transform .3s;
     transform: translateY(0);
 }
+
 .menu ul li {
     position: relative;
     text-align: left;
@@ -127,11 +172,13 @@ body.menu-expanded .menu{
     padding-left: 2.4rem;
     color: var(--dark-text);
     padding-block: 1.8rem;
-    border-bottom: .1rem solid var(--line-color) ;
+    border-bottom: .1rem solid var(--line-color);
 }
+
 .menu ul li a {
     color: var(--dark-text);
 }
+
 .menu ul li a.actived::before {
     content: '';
     position: absolute;
@@ -139,20 +186,18 @@ body.menu-expanded .menu{
     top: 0;
     width: .5rem;
     height: 100%;
-    background-color: var(--border-color);
+    background-color: var(--primary-color);
 }
 
 
 
 /* ---------------- HOME ----------------  */
-#home {
-    padding-top: var(--nav-height);
-}
-section .wrapper {
+section#home .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 section h1 {
     color: white;
     font-family: 'Manrope';
@@ -160,6 +205,7 @@ section h1 {
     margin-top: 8.85rem;
     width: min(30rem, 100%);
 }
+
 section .wrapper button {
     background: none;
     display: flex;
@@ -171,31 +217,37 @@ section .wrapper button {
     text-transform: uppercase;
     color: white;
     font-weight: 700;
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
 }
+
 section .wrapper button img {
     margin-left: 1rem;
 }
+
 .titles {
     margin-top: 9.8rem;
 }
+
 .titles h2 {
     font-size: 5rem;
     color: white;
-    letter-spacing: -0.03em;  
+    letter-spacing: -0.03em;
 }
+
 .titles h2:last-child {
     color: black;
-    
-    text-shadow: -1px -1px 0 var(--primary-color), 1px -1px 0 var(--primary-color), -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color); 
+
+    text-shadow: -1px -1px 0 var(--primary-color), 1px -1px 0 var(--primary-color), -1px 1px 0 var(--primary-color), 1px 1px 0 var(--primary-color);
 }
+
 section #cups {
     width: 100%;
     position: relative;
-   
 
-    
+
+
 }
+
 .blur-limit {
     position: relative;
     z-index: 2;
@@ -219,24 +271,26 @@ section .blur::before {
 
 
 /* ----------------    BENEFITS----------------  */
-
+section#benefits {
+    background-color: #121214;
+    border-top: solid .2rem var(--line-color);
+}
 #benefits {
     text-align: left;
-    padding-top: 15rem;
-    /* background-image: linear-gradient( to top , var(--gradient-color) 1rem, black ); */
 }
+
 #benefits .cards {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
 }
+
 #benefits .card {
-    box-shadow: -.5rem .5rem 1rem var(--primary-color);
     position: relative;
     width: 100%;
-    background-color: rgb(26, 17, 46);
     padding: 2.4rem;
-    /* border: solid 1px var(--primary-color); */
+    border: solid .15rem #3c3c42 ;
+    /* box-shadow: 0rem 0rem 1rem var(--primary-color); */
     border-radius: 0.6rem;
 }
 
@@ -246,22 +300,27 @@ section .blur::before {
     text-transform: uppercase;
     color: var(--primary-color);
 }
+
 #benefits h2 {
     font-size: 3rem;
     margin-bottom: 6rem;
     color: white;
 }
+
 #benefits .card i {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: #04d361;
+    background-color: #121214;
     position: absolute;
     top: -1.6rem;
 }
+
 #benefits .card h3 {
     color: white;
     font-size: 2.4rem;
     margin-bottom: 1.6rem;
 }
+
 #benefits p {
     color: var(--dark-text);
     margin-bottom: 2.4rem;
@@ -269,33 +328,46 @@ section .blur::before {
 
 
 /* ---------------- CONTACT ----------------  */
-#contact .wrapper{
-    padding-block: 15rem;
-    
+section#contact {
+    border-top: solid .2rem var(--line-color);
 }
+#contact .wrapper .conlumn-a {
+    margin-left: 0;
+}
+#contact .wrapper .map {
+    display: none;
+} 
+  
+
+
 #contact header {
     text-align: left;
 }
+
 #contact h4 {
     font-size: 1.4rem;
     margin-bottom: 1.6rem;
     text-transform: uppercase;
     color: var(--primary-color);
 }
+
 #contact h2 {
     font-size: 3rem;
     margin-bottom: 6rem;
     color: white;
 }
+
 #contact ul {
     width: 100%;
     text-align: left;
     margin-bottom: 5rem;
 }
+
 #contact ul li i {
     color: var(--primary-color);
     font-size: 3rem;
 }
+
 #contact ul li {
     color: var(--dark-text);
     display: flex;
@@ -303,42 +375,207 @@ section .blur::before {
     gap: 0.8rem;
     margin-bottom: 1rem;
 }
+
 #contact a i {
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
 }
-#contact a {
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1.6rem 3.2rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 0.6rem;
-    text-transform: uppercase;
-    color: white;
-    font-weight: 700;
-    font-size: 1.4rem; 
-    border-radius: 4rem;
-}
+
+
 
 
 
 /* ---------------- FOOTER ----------------  */
 footer {
+    background-color: #121214;
     padding-block: 6rem;
-    text-align: left;
-    border-top: solid 1px var(--line-color);
+    
+    border-top: solid .2rem var(--line-color);
 }
+footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+}
+
 footer p {
     color: var(--dark-text);
     margin-bottom: 3.2rem;
 }
+
 footer .social-links {
     display: flex;
     gap: 3.2rem;
 }
+
 footer .social-links li i {
     font-size: 3rem;
     color: var(--primary-color);
+}
+
+/* ---------------- RESPONSIVE ----------------  */
+@media(min-width: 1024px) {
+    body {
+        overflow: auto;
+    }
+
+    .wrapper {
+        width: min(1024px, 100%);
+        position: relative;
+    }
+    nav {
+        position: static;
+    }
+    
+    section {
+        padding-block: 16rem;
+    }
+    
+   
+
+    nav#navigation .wrapper * {
+        border-bottom: none;
+        margin: 0;
+        padding: 0;
+        visibility: initial;
+        display: initial;
+        opacity: initial;
+        flex-direction: initial;
+        position: initial;
+        font-size: initial;
+        font-weight: initial;
+        transform: initial;
+        color: initial;
+        background-color: initial;
+        filter: initial;
+    }
+    
+    nav .wrapper {
+        height: 12.55rem;
+       
+    }
+
+    nav::after,
+    .menu ul li a.actived::before {
+        display: none;
+    }
+    nav#navigation .logo-desktop {
+        width: 19.16rem;
+        text-align: left;
+    }
+    
+
+    nav#navigation .wrapper .menu {
+        display: flex;
+        z-index: 100;
+
+    }
+
+    nav#navigation .close-menu,
+    nav#navigation .open-menu,
+    nav#navigation .logo-mobile,
+    section#home h1,
+    section#home button {
+        display: none;
+    }
+
+    nav#navigation .menu ul {
+        display: flex;
+        gap: 3.2rem;
+        
+        
+        
+        
+    }
+    nav#navigation .menu ul li {
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-align: center;
+        position: relative;
+              
+        
+    }
+
+    nav#navigation .menu ul li a {
+        color: white;
+        
+    }
+ 
+
+    nav#navigation .wrapper .button {
+        background: none;
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        padding: 1.1rem 3.8rem;
+        border: 1px solid var(--primary-color);
+        border-radius: 0.6rem;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+        z-index: 2000;
+    }
+
+
+    
+    #home .wrapper {
+        position: relative;
+    }
+
+    #blur-desktop-01 {
+        position: absolute;
+        top: -6.3rem;
+        right: -6.3rem;
+        width: 32.1rem;
+        height: 32.1rem;
+        background-color: var(--blur-color);
+        filter: blur(15rem);
+        z-index: 0;
+    }
+    #home .wrapper .blur::before {
+        display: none;
+    }
+    #blur-desktop-02 {
+        position: absolute;
+        top: 40rem;
+        left: -2.9rem;
+        width: 32.1rem;
+        height: 32.1rem;
+        background-color: var(--blur-color);
+        filter: blur(15rem);
+       
+    }
+    /* ---------------- BENEFITS ----------------  */
+    #benefits .wrapper .cards {
+        flex-direction: row;
+    }
+
+    /* ---------------- CONTACT ----------------  */
+    .column-a {
+        grid-area: A;
+    }
+    .column-b {
+        grid-area: B;
+        height: 90%;
+        width: 100%;
+    }
+    #contact .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 57.5rem;
+        grid-template-areas: 'A B';
+    }
+    #contact .wrapper .map {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* ---------------- FOOTER ----------------  */
+    footer .wrapper {
+        align-items: center;
+        text-align: center;
+    }
 }

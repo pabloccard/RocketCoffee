@@ -17,19 +17,29 @@
 </head>
 
 <body>
+
+    
     <nav id="navigation">
         <div class="wrapper">
-            <img class="logo" src="./assets/logo-mobile.svg" alt="foguete-logo-rocketseat">
+            <a class="logo-desktop" href=""><img src="./assets/logo-desktop.svg" alt="foguete-logo-rocketseat"></a>
+            <img class="logo-mobile" src="./assets/logo-mobile.svg" alt="foguete-logo-rocketseat">
+
 
             <div class="menu">
                 <ul>
-                    <li><a href="#" id="home">Home</a></li>
-                    <li><a href="#" class="actived" id="menu">Menu</a></li>
-                    <li><a href="#" id="recompensas">Recompensas</a></li>
-                    <li><a href="#" id="gift-card">Gift Cards</a></li>
-                    <li><a href="#" id="lojas">Lojas</a></li>
+                    <li><a href="#home" class="actived" id="home" onclick="closeMenu()">Home</a></li>
+                    <li><a href="#benefits" id="menu" onclick="closeMenu()">Benefícios</a></li>
+                    <li><a href="#contact" id="recompensas" onclick="closeMenu()">Contato</a></li>
+
                 </ul>
             </div>
+
+
+            <a class="button" href="#contact">
+                Pegar meu café
+                <img src="./assets/arrow.svg" alt="maior que">
+            </a>
+           
 
             <button class="open-menu" onclick="openMenu()">
                 <img src="./assets/menu-buguer-open.svg" alt="menu-buguer-open">
@@ -42,6 +52,9 @@
 
     <section id="home">
         <div class="wrapper">
+            <div id="blur-desktop-01"></div>
+            <div id="blur-desktop-02"></div>
+
             <h1>
                 O café que fará seu código decolar para
                 o próximo nível.
@@ -103,25 +116,33 @@
 
     <section id="contact">
         <div class="wrapper">
-            <header>
-                <h4>Contato</h4>
-                <h2>Busque ou peça o seu RocketCoffee!</h2>
-            </header>
-
-            <ul>
-                <li>
-                    <i class='bx bx-location-plus'></i>
-                    R. Amauri Souza, 346
-                </li>
-                <li>
-                    <i class='bx bx-envelope'></i>
-                    contato@rocketcoffee.com
-                </li>
-            </ul>
-            <a href="">
-                <i class='bx bxl-whatsapp'></i>
-                Pedir meu café
-            </a>
+            <div class="column-a">
+                <header>
+                    <h4>Contato</h4>
+                    <h2>Busque ou peça o seu RocketCoffee!</h2>
+                </header>
+    
+                <ul>
+                    <li>
+                        <i class='bx bx-location-plus'></i>
+                        R. Amauri Souza, 346
+                    </li>
+                    <li>
+                        <i class='bx bx-envelope'></i>
+                        contato@rocketcoffee.com
+                    </li>
+                </ul>
+                <a class="button" href="">
+                    <i class='bx bxl-whatsapp'></i>
+                    Pedir meu café
+                </a>
+                
+            </div>
+            <div class="column-b">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.21346081697!2d-49.371996375915174!3d-18.015294548380098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a05775bfdeeecf%3A0xc4254738e7a3ddd2!2sFeira%20Coberta%20Goiatuba%20(CEMAL)!5e0!3m2!1spt-BR!2sbr!4v1652559885438!5m2!1spt-BR!2sbr" width="" height="" style="border: 1px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            
         </div>
     </section>
 
@@ -129,7 +150,7 @@
         <div class="wrapper">
             <img src="./assets/logo-mobile.svg" alt="">
             <p>
-                ©2022 RocketSeat.br <br>
+                ©2022 Rocketseat <br>
                 Todos os direitos reservados.
             </p>
             <ul class="social-links">
@@ -156,8 +177,7 @@
 
 
 
-
-
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./main.js"></script>
 </body>
 
