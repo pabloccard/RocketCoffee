@@ -6,7 +6,6 @@ function closeMenu() {
     document.body.classList.remove('menu-expanded');
 }
 ScrollReveal({
-    delay: 100,
     origin: 'top',
     distance: '50px',
     duration: 700
